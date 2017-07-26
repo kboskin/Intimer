@@ -1,5 +1,6 @@
 package com.example.hp.intimer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -22,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     private FloatingNavigationView mFloatingNavigationView;
 
-    public List<Task> taskList = new ArrayList<>();
+    public static List<Task> taskList = new ArrayList<>();
     private RecyclerView recyclerView;
-    public  TaskAdapter tAdapter;
+    public static TaskAdapter tAdapter;
 
 
     @Override
@@ -36,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*startActivity(new Intent(MainActivity.this, SecondActivity.class));*/
-                prepareTaskData("jakldsj","asasd" ,  String.valueOf(1));
+                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+
             }
         });
 
@@ -70,17 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    private void prepareTaskData(String title, String description, String time) {
 
-        task = new Task(title, description, time);
-        taskList.add(task);
-        MainActivity.this.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                tAdapter.notifyItemChanged(taskList.size()-1);
-            }
-        });
-
-    }
 
 }

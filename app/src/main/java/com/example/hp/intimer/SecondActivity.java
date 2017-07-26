@@ -14,6 +14,9 @@ import com.example.hp.intimer.recycleviewsetter.Task;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.example.hp.intimer.MainActivity.tAdapter;
+import static com.example.hp.intimer.MainActivity.taskList;
+
 
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -61,7 +64,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         textViewTime = (TextView) findViewById(R.id.textViewTime);
         imageViewReset = (ImageView) findViewById(R.id.imageViewReset);
         imageViewStartStop = (ImageView) findViewById(R.id.imageViewStartStop);
-        editTextTitle = (EditText)findViewById(R.id.editTextTitle);
+        editTextTitle = (EditText) findViewById(R.id.editTextTitle);
     }
 
     /**
@@ -228,8 +231,12 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     private void prepareTaskData(String title, String description, String time) {
 
         task = new Task(title, description, time);
-      /*  taskList.add(task);*/
-        //tAdapter.notifyDataSetChanged();
+        taskList.add(task);
+        SecondActivity.this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                tAdapter.notifyItemChanged(taskList.size() - 1);
+            }
+        });
     }
-
 }
