@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Intimer</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_minute">Minute</string>
+    <string name="message_minutes_or_title">OOOps, it seems you forget to enter minutes or title</string>
+    <string name="textview_time_cv_default_value">00:01:00</string>
+    <string name="edittext_minute_default_value">1</string>
+    <string name="textview_time_default_value">00:01:00</string>
+    <string name="edittext_title_hint">Enter your title here</string>
+    <string name="slogan_main">Don\'t waste your time!</string>
+</resources>

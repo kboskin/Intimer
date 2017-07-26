@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/activity_vertical_margin"
+    android:layout_gravity="center"
+    card_view:cardBackgroundColor="@color/colorWhite"
+    card_view:contentPadding="2dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"> <!-- Change it to customize the border width -->
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardBackgroundColor="@color/colorBackground"
+        card_view:contentPadding="@dimen/content_cv_padding">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorBackground">
+
+                <ProgressBar
+                    android:id="@+id/progressBarCV"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="@dimen/prgrbar_cv_width"
+                    android:layout_height="@dimen/prgrbar_cv_height"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/drawable_circle_dark_blue"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/drawable_circle_yellow"
+                    android:rotation="-90" />
+
+                <TextView
+                    android:id="@+id/textViewTimeCV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/textview_time_cv_default_value"
+                    android:textColor="@color/colorYellow"
+                    android:textSize="@dimen/textview_cv_size" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/textview_cv_marg_start"
+                android:layout_marginTop="@dimen/textview_cv_marg_top"
+                android:layout_toEndOf="@+id/relativeLayout"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textviev_cv_title_textsize" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</android.support.v7.widget.CardView>
