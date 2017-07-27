@@ -232,11 +232,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
         task = new Task(title, description, time);
         taskList.add(task);
-        SecondActivity.this.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                tAdapter.notifyItemChanged(taskList.size() - 1);
-            }
-        });
+        tAdapter.notifyItemChanged(taskList.size() - 1);
+
     }
 }

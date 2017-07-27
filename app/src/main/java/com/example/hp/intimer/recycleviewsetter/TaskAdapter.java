@@ -29,8 +29,14 @@ public class TaskAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.cardview_layout, parent, false);
+        MyViewHolder holder = new MyViewHolder(itemView);
 
-        return new MyViewHolder(itemView);
+        Task task = taskList.get(position);
+        holder.title.setText(task.getTitle());
+        holder.textViewTimeCV.setText(task.getTime());
+        holder.startStop(task.getTime());
+
+        return holder;
     }
 
     @Override
@@ -40,10 +46,6 @@ public class TaskAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onViewAttachedToWindow(MyViewHolder holder) {
-        Task task = taskList.get(position);
-        holder.title.setText(task.getTitle());
-        holder.textViewTimeCV.setText(task.getTime());
-        holder.startStop(task.getTime());
     }
 
     @Override
