@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setDrawingCacheEnabled(true);
+        recyclerView.setItemViewCacheSize(50);
 
         tAdapter = new TaskAdapter(taskList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());

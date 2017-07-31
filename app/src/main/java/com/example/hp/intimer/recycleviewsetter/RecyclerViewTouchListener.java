@@ -15,7 +15,6 @@ public class RecyclerViewTouchListener implements RecyclerView.OnItemTouchListen
         switch (action) {
             case MotionEvent.ACTION_MOVE:
                 rv.getParent().requestDisallowInterceptTouchEvent(true);
-                break;
         }
         return false;
     }
